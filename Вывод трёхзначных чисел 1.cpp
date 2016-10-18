@@ -2,26 +2,34 @@
 
 using namespace std;
 
+bool isThreedigit (int);
+
 int main() {
-	cout<<"All three-digit numbers that are divisible by each digit in them\n";
-	int j,i = 100;
-	int dgt, copy;
-	while(i < 1000) {
-		j = 0;
-		copy = i;
-		while(j < 3) {
-			dgt = copy % 10;
-			if (dgt == 0)
-				break;
-			if (i % dgt == 0) 
-				copy /= 10;
-			else break;
-			j++;
-		}
-		if (j == 3)
+int i = 10;
+	while(i < 1000){
+		if (isThreedigit (i))
 			cout<< i << "  ";
-		i++;
+			i++;
 	}
 	cout<<endl;
 	return 0;
+}
+
+bool isThreedigit (int i) {
+	int j = 0;
+	int a, cop;
+		cop = i;
+		while(j < 3) 
+		{
+			a = cop % 10;
+			if (a == 0)
+				break;
+			if (i % a == 0) 
+				cop /= 10;
+			else break;
+			j++;
+		}
+	if (j == 3)
+		return true;
+	return false;
 }
