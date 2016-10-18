@@ -2,10 +2,17 @@
 
 using namespace std;
 
+int sumThreedigit(int, int &);
+
 int main() {
-	int j,i = 100;
-	int a, copy;
-	int sum = 0, k = 0;
+	int i = 100, k = 0;
+	cout<<"The sum of the all numbers is "<< sumThreedigit(i, k) << endl;
+	cout <<"The even digits in the sum is "<< k << endl;
+	return 0;
+}
+
+int sumThreedigit(int i, int &k) {
+	int j, a, copy, sum = 0;
 	while(i < 1000) 
 	{
 		j = 0;
@@ -30,7 +37,5 @@ int main() {
 				k++;
 				copys /= 10;
 		}
-	cout<<"The sum of the all numbers is "<< sum << endl;
-	cout <<"The even digits in the sum is "<< k << endl;
-	return 0;
+	return sum;
 }
