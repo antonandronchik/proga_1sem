@@ -2,40 +2,57 @@
 
 using namespace std;
 
-int sumThreedigit(int, int &);
+int sumThreedigit(int);
+
+int evenDigit(int);
+
+bool isOddNumber(int);
 
 int main() {
-	int i = 100, k = 0;
-	cout<<"The sum of the all numbers is "<< sumThreedigit(i, k) << endl;
-	cout <<"The even digits in the sum is "<< k << endl;
+	int num = 100;
+	cout << "The sum of the all numbers is " << sumThreedigit(num) << endl;
+	cout << "The even digits in the sum is " << evenDigit(sumThreedigit(num)) << endl;
 	return 0;
 }
 
-int sumThreedigit(int i, int &k) {
-	int j, a, copy, sum = 0;
-	while(i < 1000) 
-	{
+int sumThreedigit(int num) {
+	int sum = 0;
+	while (num < 1000) {
+		if (isOddNumber(num))
+			sum += num;
+		num++;
+	}
+	return sum;
+}
+
+bool isOddNumber(int num) {
+	int j, a, copy;
+	while (num < 1000) {
 		j = 0;
-		copy = i;
-		while(j < 3) 
-		{
+		copy = num;
+		while (j < 3) {
 			a = copy % 10;
-			if (a % 2 == 0) 
+			if (a % 2 == 0)
 				break;
 			copy /= 10;
 			j++;
 		}
 		if (j == 3)
-			sum += i;
-		i++;
+			return true;
+		else
+			return false;
 	}
+}
+
+int evenDigit(int sum) {
 	int copys = sum;
-		while(copys) {
-			int n;
-			n = copys % 10;
-			if (n % 2 == 0)
-				k++;
-				copys /= 10;
-		}
-	return sum;
+	int k = 0;
+	while (copys) {
+		int n;
+		n = copys % 10;
+		if (n % 2 == 0)
+			k++;
+		copys /= 10;
+	}
+	return k;
 }
