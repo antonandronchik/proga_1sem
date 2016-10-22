@@ -72,8 +72,7 @@ int main() {
 		cout << "Sum of " << n << " elements = " << sum << endl;
 		break;
 	case 8:
-		for (int i = 1; i <= n; ++i)
-		{
+		for (int i = 1; i <= n; ++i) {
 			numerator *= 1 * i;
 			denominator += 1.0 / i;
 			sum += numerator / denominator;
