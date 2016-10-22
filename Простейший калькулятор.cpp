@@ -15,8 +15,7 @@ int main() {
 	cin >> a >> b;
 	double c;
 	bool ok = true;
-	switch (operation)
-	{
+	switch (operation) {
 	case '*':
 	case '.':
 		c = a*b;
