@@ -2,28 +2,21 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 	cout << "\n" << " MENU" << endl;
 	cout << "Enter 1 - task 2" << endl;
 	cout << "Enter 2 - task 3" << endl;
 	cout << "Enter 3 - task 4" << endl;
 	cout << "Enter 0 - EXIT" << "\n" << endl;
-
 	char choose;
 	cin >> choose;
 	if (choose == '0')
 		return 0;
-
 	double x, y, z;
 	cout << "Enter a pointer (x,y)" << endl;
 	cin >> x >> y;
-
-	switch (choose)
-
-	{
+	switch (choose) {
 	case '1':
-
 		if (((x < -0.4) && (x > 2)) && ((y < -0.5) && (y > 1)))
 		{
 			cout << "Don't belong" << endl;
@@ -34,11 +27,8 @@ int main()
 			cout << "Belong" << endl;
 		else
 			cout << "Don't belong" << endl;
-
 		break;
-
 	case '2':
-
 		if (((x < -1) && (x > 1)) && ((y < -1) && (y > 1)))
 		{
 			cout << "Don't belong" << endl;
@@ -49,11 +39,8 @@ int main()
 			cout << "Belong" << endl;
 		else
 			cout << "Don't belong" << endl;
-
 		break;
-
 	case '3':
-
 		if (((x < -1) && (x > 1)) && ((y < -1) && (y > 1)))
 		{
 			cout << "Don't belong" << endl;
@@ -64,16 +51,10 @@ int main()
 			cout << "Belong" << endl;
 		else
 			cout << "Don't belong" << endl;
-
 		break;
-
 	default:
-
 		cout << "Input error" << endl;
 		return 0;
-
 	}
-
-
 	return 0;
 }
