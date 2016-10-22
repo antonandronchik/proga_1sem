@@ -2,8 +2,7 @@
 
 using namespace std;
 
-int main()
-{
+int main() {
 	cout << "Menu" << endl;
 	cout << "Enter 1 if you want to check task a)" << endl;
 	cout << "Enter 2 if you want to check task b)" << endl;
@@ -57,21 +56,21 @@ int main()
 			sum += pow(-1, i + 1) / (i*(i + 1));
 		cout << "Sum of " << n << " elements = " << sum << endl;
 		break;
-	case 5 :
+	case 5:
 		for (int i = 1; i <= n; ++i)
 			sum += 1.0 / (pow(i, 5));
 		cout << "Sum of " << n << " elements = " << sum << endl;
 		break;
-	case 6 :
+	case 6:
 		for (int i = 1; i <= n; ++i)
 			sum += 1 / (pow(2 * i + 1, 2));
 		cout << "Sum of " << n << " elements = " << sum << endl;
 		break;
-	case 7 :
+	case 7:
 		for (int i = 1; i <= n; ++i)
 			sum += (pow(-1, i)) / (2 * i + 1);
 		cout << "Sum of " << n << " elements = " << sum << endl;
-		break; 
+		break;
 	case 8:
 		for (int i = 1; i <= n; ++i)
 		{
