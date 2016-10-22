@@ -10,10 +10,10 @@ int main() {
 	short ok = true;
 	while (ok) {
 		long long n = 2, a;
-		cout << "Please, enter diapazon\n";
+		cout << "Please, enter range\n";
 		cin >> a;
 		while (a < 2) {
-			cout << "Please enter other diapazon\n";
+			cout << "Please enter other range\n";
 			cin >> a;
 		}
 		PrintSimpleNumber(a);
