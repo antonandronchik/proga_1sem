@@ -1,7 +1,8 @@
 #include <iostream>
+
 using namespace std;
-int main()
-{
+
+int main() {
 	cout << "Numbers translator";
 	cout << " Enter the nubmer" << endl;
 	int  a;
@@ -10,13 +11,11 @@ int main()
 	if ((a < 1) || (a >= 100))
 	{
 		cout << " System error " << endl;
-	
 		return 0;
 	}
 	if ((a >= 10) && (a < 20))
 	{
-		switch (a)
-		{
+		switch (a) {
 		case 10: cout << "Ten ";
 			break;
 		case 11: cout << "Eleven ";
@@ -41,8 +40,7 @@ int main()
 	}
 	else
 	{
-		switch (a / 10)
-		{
+		switch (a / 10) {
 		case 2: cout << "Twenty";
 			break;
 		case 3: cout << "Thirty";
@@ -60,8 +58,7 @@ int main()
 		case 9: cout << "Ninety";
 			break;
 		}
-		switch (a % 10)
-		{
+		switch (a % 10) {
 		case 1: cout << "one" << endl;
 			break;
 		case 2: cout << "two" << endl;
@@ -82,7 +79,5 @@ int main()
 			break;
 		}
 	}
-
 	return 0;
-
 }
