@@ -8,8 +8,12 @@ void PrintPalindrome(long long, long long);
 
 int main() {
 	long long n = 10, a;
-	cout << "Please, enter diapazon" << endl;
+	cout << "Please, enter range, more than 10" << endl;
 	cin >> a;
+	while (a < 10) {
+		cout << "Please, enter range, more than 10" << endl;
+		cin >> a;
+	}
 	PrintPalindrome(a, n);
 	return 0;
 }
