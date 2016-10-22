@@ -1,7 +1,11 @@
 #include <iostream>
+
 #include <cmath>
+
 using namespace std;
-double func(double);
+
+double PrPosled(double);
+
 int main() {
 	double a_n1, a_n2 = func(1), e = 1e-6;
 	int i = 2;
@@ -15,6 +19,6 @@ int main() {
 	return 0;
 }
 
-double func(double n) {
+double PrPosled(double n) {
 	return n / (sqrt(n*n + 1) + sqrt(n*n - 1));
 }
