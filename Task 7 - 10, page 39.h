@@ -72,7 +72,7 @@ void DisplayMatrix(int matrix[][M], int n, int m)
 	}
 }
 
-void RevKolumns(int matrix[][M], int n, int m)
+void RevColumns(int matrix[][M], int n, int m)
 {
 	for (int i = 0; i < n; i++)
 		for(int j = 0; j < m / 2; j++)
