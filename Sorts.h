@@ -50,21 +50,6 @@ void BubbleSort(int a[], int n) {
 	}
 }   
 
-/*void InsertionSort(int a[], int n) {
-	int temp = 0;
-	int j = 0;
-	for (int i = 0; i < n; i++) {
-		temp = a[i];
-		j = i - 1;
-		for (int j = 1; temp < a[j]; j++)
-			for (int k = i - 1; j >= 0; k++){
-				a[k + 1] = a[k];
-				j = j - 1;
-				a[j] = temp;
-		}
-	}
-}*/
-
 void InsertionSort(int a[], int n)
 {
 	for (int i = 0; i < n; i++)
