@@ -7,7 +7,7 @@ void DisplayArray(char a[], int n);
 void EnterArray(char a[], int n);
 void Swap(char& a, char& b);
 void Reverse(char a[], int n);
-bool isPalindrome(char str[], char arr[], int n);
+bool isPolindrome(char str[], char arr[], int n);
 void StrCopy(char a[], char b[], int n);
 
 
