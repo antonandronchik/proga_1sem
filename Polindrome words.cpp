@@ -24,7 +24,7 @@ int main()
 	}
 	cout << "Please, enter word\n";
 	EnterArray(arr, n);
-	if (isPalindrome(arr, str, n))
+	if (isPolindrome(arr, str, n))
 		cout <<"This word is polindrome\n";
 	else cout <<"This word is not polindrome\n";
 	return 0;
@@ -64,7 +64,7 @@ void Reverse(char a[], int n)
 		Swap(a[i], a[n - i - 1]);
 }
 
-bool isPalindrome(char str[], char arr[], int n) {
+bool isPolindrome(char str[], char arr[], int n) {
 	int i = 0;
 	StrCopy(str, arr, n);
 	Reverse(arr, n);
