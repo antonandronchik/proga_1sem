@@ -1,12 +1,12 @@
-#include "Header.h"
+#include "Task 3-8, 14, 15, page 34.h"
 
 int main() {
 	int a[N] = { 0 }, b[N] = { 0 }, j = 0, m = 0;
 	int n, number, k;
-	/*cout << "Please, enter k\n";
-	cin >> k;*/
-	/*cout << "Please, enter number\n";
-	cin >> number;*/
+	cout << "Please, enter k\n";
+	cin >> k;
+	cout << "Please, enter number\n";
+	cin >> number;
 	while (true)
 	{
 		cout << "Enter n > 0 and n <= " << N << ": ";
@@ -15,37 +15,37 @@ int main() {
 			break;
 	}
 	EnterArray(a, n);
-	//RandomArray(a, n);
+	RandomArray(a, n);
 	cout << "Source array" << endl;
 	DisplayArray(a, n);
 	// 3 TASK 
 	Sequence(a, n);
 	//4 TASK
-	//Reverse(a, n);
-	//DisplayArray(a, n);
+	Reverse(a, n);
+	DisplayArray(a, n);
 	//5 TASK
-	/*cout << "\nAll local maximus\n";;
+	cout << "\nAll local maximus\n";;
 	locmaxNumbers(a, b, n, j);
 	DisplayArray(b, j);
 	cout << "\nAll local minimums\n";;
 	locminNumbers(a, b, n, j);
-	DisplayArray(b, j);*/
+	DisplayArray(b, j);
 	//6 TASK
-	/*cout << "All numbers less than " << number << endl;
+	cout << "All numbers less than " << number << endl;
 	LessNumbers(a, n, b, j, number);
-	DisplayArray(b, j);*/
+	DisplayArray(b, j);
 	//7 TASK
-	/*CiklReverse(a, n, k);
-	DisplayArray(a, n);*/
+	CiklReverse(a, n, k);
+	DisplayArray(a, n);
 	//8 TASK
-	//SumElements(a, n);
+	SumElements(a, n);
 	//TASK 14
-	/*DelEl2(a, b, n, m);
+	DelEl2(a, b, n, m);
 	cout << "\nAll elements occurring more than once\n";
-	DisplayArray(b, m);*/
+	DisplayArray(b, m);
 	//TASK 15
-	/*AmountOFNumbers(a, b, n, m);
+	AmountOFNumbers(a, b, n, m);
 	cout << "\nThe amount various elements are\n";
-	cout << m << endl;*/
+	cout << m << endl;
 	return 0;
 } 
