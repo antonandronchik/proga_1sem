@@ -3,35 +3,50 @@
 using namespace std;
 
 const int N = 256;
-void DisplayArray(char a[], int n);
-int StrLength(char str[]);
-bool IsAlphabet(char ch);
-bool Difference (char str2[], char str3[]);
-void Swap(char& a, char& b);
-void ChangeWord (char str1[], char str2[], char str3[], int n, int& t);
-void CiklReverse(char a[],char str2[], char str3[], int n, int k, int t);
+int StrLength(char []);
+bool IsAlphabet(char );
+int Difference(char [], char []);
+void DecreaseString(char [], char [], char [], int, int);
+void IncreaseString(char [], char [], char [], int, int);
+bool IsEqual(char [], char [], int, int);
+void ObtainTextOfWords(char [], char [], char [], int);
+void ChangeWord(char [], char [], char [], int, int, int);
+void Choiсe(char [], char [], char [], int, int&, int);
 
 int main()
 {
-	int n = 26, t = 0, k = 0;
 	char str1[N] = {"Is TV very popular today?"};
-	char str2[N] = {"TV"};
-	char str3[N] = {"television"};
+	int n = StrLength(str1);
+	char str2[N] = {'0'};
+	char str3[N] = {'0'};
 	cout << str1 << endl;
-	ChangeWord(str1, str2, str3, n, t);
-	CiklReverse(str1,str2,str3,n, k, t);
-	DisplayArray(str1, 100);
+	cout << "Please, enter word that you want to change\n";
+	cin >> str2;
+	cout << "Please, enter word for which you want to change the word " << str2 << endl;
+	cin >> str3;
+	ObtainTextOfWords(str1, str2, str3, n);
+	cout << str1 << endl;
 	return 0;
 }
 
-void DisplayArray(char a[],int n)
+void ObtainTextOfWords(char str1[], char str2[], char str3[], int n)
 {
-	for (int i = 0; i < n; i++)
-	{
-		cout << a[i];
-	}
-	cout << endl;
-
+	bool flag = false; int i = -1, j = 0;
+	while (str1[++i]) 
+	{  
+		if (IsAlphabet(str1[i])) 
+		{ 
+			flag = true; 
+			j++; 
+			continue; 
+		} 
+		Choiсe(str1, str2, str3, n, i, j);
+		if (flag) 
+		{ 
+			flag = false; 
+			j = 0; 
+		} 
+	} 
 }
 
 bool IsAlphabet(char ch)
@@ -40,13 +55,6 @@ bool IsAlphabet(char ch)
 		return true; 
 	else return false; 
 } 
-
-void Swap(char& a, char& b)
-{
-	int t = a;
-	a = b;
-	b = t;
-}
 
 int StrLength(char str[])
 { 
@@ -58,73 +66,64 @@ int StrLength(char str[])
 	return length; 
 } 
 
-bool Difference (char str2[], char str3[])
+int Difference(char str2[], char str3[])
 {
-	if (StrLength(str2) - StrLength(str3) >= 0)
+	return StrLength(str2) - StrLength(str3);
+}
+
+void Choiсe(char str1[], char str2[], char str3[], int n, int& i, int j)
+{
+	if (IsEqual(str1, str2, i, j))
+	{
+		ChangeWord(str1, str2, str3, n, i, j);
+		if (Difference(str2,str3) >= 0)
+			i = i - Difference(str2, str3);
+		else i = i + abs(Difference(str2, str3));
+	}
+}
+
+bool IsEqual(char str1[], char str2[], int i, int j)
+{
+	int len = 0;
+	i -= j;
+	for (int k = 0; str2[k]; i++, k++)
+	{
+		if (str1[i] == str2[k])
+			len++;
+		else break;
+	}
+	if (len == j)
 		return true;
-	else return false;
+	return false;
 }
 
-void ChangeWord (char str1[], char str2[], char str3[], int n, int& t)
+void ChangeWord(char str1[], char str2[], char str3[], int n, int i, int j)
 {
-	bool flag = false; int i = -1, j = 0; 
-	while (str1[++i]) 
-	{  
-		if (str1[i] == str2[j])
-		{ 
-			flag = true; 
-			j++; 
-			continue; 
-		}
+	if (Difference(str2,str3) >= 0)
+		DecreaseString(str1, str2, str3, n, i);
+	else 
+		IncreaseString(str1, str2, str3, n, i);
+	for (int k = 0; str3[k]; k++, i++)
+		str1[i - j] = str3[k];
 
-		if (j == StrLength(str2))
-		{
-			if (Difference(str2, str3))
-			{
-				t = i - StrLength(str2) + 2;
-				for (int k = 0,j = i - StrLength(str2); str2[k]; k++)
-					str1[j++] = str3[k];
-			}
-			else
-			{
-				for (int k = 0,j = i - StrLength(str2); str3[k]; k++)
-				{
-					if (!(IsAlphabet(str2[k])))
-					{
-
-						str1[n] = str3[k];
-						n++;
-						continue;
-					}
-					str1[j++] = str3[k];
-					t = j;
-				}
-			}
-		}
-
-		if (flag) 
-		{ 
-			flag = false; 
-			j = 0; 
-		} 
-	} 
 }
 
-void CiklReverse(char a[], char str2[], char str3[], int n, int k, int t) {
-	int j = 0;
-	if (Difference (str2, str3))
+void DecreaseString(char str1[], char str2[], char str3[], int n, int i)
+{
+	int copy = i;
+	for (int j = 0; j < n - copy + Difference(str2, str3); j++)
 	{
-		k = StrLength(str2) - StrLength(str3);
-		n = n - 1;
+		str1[i - Difference(str2, str3)] = str1[i];
+		i++;
 	}
-	else
+}
+
+void IncreaseString(char str1[], char str2[], char str3[], int n, int i)
+{
+	int copy = StrLength(str1) - 1;
+	for (int j = 0; j < StrLength(str1) - i; j++)
 	{
-		k = n - t;
-		n = n - 1 + StrLength(str3) - StrLength(str2);
-	}
-	while (j < k) {
-		for (int i = t; i < n; i++)
-			Swap(a[i], a[i + 1]);
-		j++;
+		str1[copy + abs(Difference(str2, str3))] = str1[copy];
+		copy--;
 	}
 }
