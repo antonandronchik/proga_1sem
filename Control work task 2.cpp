@@ -3,8 +3,8 @@
 using namespace std;
 
 int SearchNumber(int);
-void digits(int& temp, int& copy);
-int NewNumber(int number, int copy);
+void digits(int&, int&);
+int NewNumber(int, int);
 
 int main()
 {
